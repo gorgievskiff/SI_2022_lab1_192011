@@ -1,0 +1,173 @@
+4.Git clone https://github.com/gorgievskiff/SI_2022_lab1_192011 -> го клонира репозиториумот на нашата локална машина
+
+5. touch > shopping_list.txt  -> Креира датотека shopping_list.txt
+	nano shopping_list.txt -> отвора едитор за текстуални документи
+	git status -> ја прикажува состојбата за работниот директориум и staging area-та
+	git add --all -> ги додава сите документи на сцената (stage)
+	git commit -m "Add 5 items to the shopping list" -> прави commit со порака "."
+
+
+
+
+6. nano shopping_list.txt
+	git status
+	git commit -a -m "Add quantities to the items." -> ги додава сите документи на сцената и прави commit со пораката во наводниците (ова е скратена команда од git add. и git commit -m "message")
+	
+
+7. git branch branch1 -> креира гранка branch1
+	git branch branch2 -> креира гранка branch2
+
+8. git log -> прикажува документација од сите комити (git log --oneline само комитите - за секој по еден ред)
+	--------------------------
+	$ git log
+commit 49237d038d438d6456ad23a244bcd21488b97cc8 (HEAD -> master, branch2, branch1)
+Author: gorgievskiff <mk.snicker@yahoo.com>
+Date:   Wed Mar 16 18:49:21 2022 +0100
+
+    Add quantities to the items.
+
+commit a6222b96995c9ed2b0c29f01c35846672161fc56
+Author: gorgievskiff <mk.snicker@yahoo.com>
+Date:   Wed Mar 16 18:44:07 2022 +0100
+
+    Add 5 items to the shopping list
+
+commit 1127f3c87bc9b98392f143d150a63b9551651735 (origin/master, origin/HEAD)
+Author: Filip Gorgievski <62121417+gorgievskiff@users.noreply.github.com>
+Date:   Wed Mar 16 18:37:05 2022 +0100
+
+    Update README.md
+
+commit 57b50de5cd3c0496aead5f0661bfb1c9e2420c91
+Author: Filip Gorgievski <62121417+gorgievskiff@users.noreply.github.com>
+Date:   Wed Mar 16 18:36:30 2022 +0100
+
+    Initial commit
+---------------------------------------------------
+
+9. git push --all -> ги прикачува комитите на remote репозиториумот
+
+10. git checkout branch1 -> се преместува на branch1 гранката (го преместува HEAD-от)
+	
+11. nano shopping_list.txt
+	git commit -a -m "Change quantity of item #5" 
+	
+12. git checkout master -> се преместува на master гранката
+
+13. nano shopping_list.txt
+	
+14. git push --all
+
+15. git checkout branch2
+	git status
+	
+16. nano shopping_list.txt
+	git commit -a -m "Modify item #4"
+	
+17. $git log --oneline
+	5f9f510 (HEAD -> branch2) Modify item #4
+	49237d0 (origin/branch2) Add quantities to the items.
+	a6222b9 Add 5 items to the shopping list
+	1127f3c Update README.md
+	57b50de Initial commit
+	
+	
+	
+	
+	$ git log
+commit 5f9f510b2fa6b54e23b4566b51eca100674aace2 (HEAD -> branch2)
+Author: gorgievskiff <mk.snicker@yahoo.com>
+Date:   Wed Mar 16 19:35:20 2022 +0100
+
+    Modify item #4
+
+commit 49237d038d438d6456ad23a244bcd21488b97cc8 (origin/branch2)
+Author: gorgievskiff <mk.snicker@yahoo.com>
+Date:   Wed Mar 16 18:49:21 2022 +0100
+
+    Add quantities to the items.
+
+commit a6222b96995c9ed2b0c29f01c35846672161fc56
+Author: gorgievskiff <mk.snicker@yahoo.com>
+Date:   Wed Mar 16 18:44:07 2022 +0100
+
+    Add 5 items to the shopping list
+
+commit 1127f3c87bc9b98392f143d150a63b9551651735
+Author: Filip Gorgievski <62121417+gorgievskiff@users.noreply.github.com>
+Date:   Wed Mar 16 18:37:05 2022 +0100
+
+    Update README.md
+
+commit 57b50de5cd3c0496aead5f0661bfb1c9e2420c91
+Author: Filip Gorgievski <62121417+gorgievskiff@users.noreply.github.com>
+Date:   Wed Mar 16 18:36:30 2022 +0100
+
+    Initial commit
+
+--------------------------------------
+
+18. nano shopping_list.txt
+	git commit -a --amend -m "Modify item #4 and add item #6" -> ги додава сите документи на stage и притоа не прави нов коммит туку на последниот ја додава промената и ја менува пораката.
+
+19.	
+	$ git log
+commit 67d7eae2fa88a9506d313dfcf2654b708a99f959 (HEAD -> branch2)
+Author: gorgievskiff <mk.snicker@yahoo.com>
+Date:   Wed Mar 16 19:35:20 2022 +0100
+
+    Modify item #4 and add item#6
+
+commit 49237d038d438d6456ad23a244bcd21488b97cc8 (origin/branch2)
+Author: gorgievskiff <mk.snicker@yahoo.com>
+Date:   Wed Mar 16 18:49:21 2022 +0100
+
+    Add quantities to the items.
+
+commit a6222b96995c9ed2b0c29f01c35846672161fc56
+Author: gorgievskiff <mk.snicker@yahoo.com>
+Date:   Wed Mar 16 18:44:07 2022 +0100
+
+    Add 5 items to the shopping list
+
+commit 1127f3c87bc9b98392f143d150a63b9551651735
+Author: Filip Gorgievski <62121417+gorgievskiff@users.noreply.github.com>
+Date:   Wed Mar 16 18:37:05 2022 +0100
+
+    Update README.md
+
+commit 57b50de5cd3c0496aead5f0661bfb1c9e2420c91
+Author: Filip Gorgievski <62121417+gorgievskiff@users.noreply.github.com>
+Date:   Wed Mar 16 18:36:30 2022 +0100
+
+    Initial commit
+
+	
+20. git checkout master 
+	git merge branch1 -> ја спојува гранката branch1 со мастер
+	
+21. git merge branch2 -> ја спојува гранката branch2 со мастер
+	
+	Да, се случи конфликт, листата на продукти по пробувањето да ја спојам branch2 со мастер беше
+
+	<<<<<<< HEAD
+	Riba x 2
+	Stek x 4
+	=======
+	Sok x 2
+	Stek x 2
+	Pivo x 10
+	>>>>>>> branch2
+
+	Конфликтот го решив со тоа што го избришав делот од комитот од мастер гранката и ги оставив промените од branch2 т.е.
+
+	Zejtin x 1
+	Brashno x 3
+	Pechurki x 1
+	Sok x 2
+	Stek x 2
+	Pivo x 10
+
+22. git add 192011.txt
+    git commit -a -m "Add docs"
+23. git push --all
