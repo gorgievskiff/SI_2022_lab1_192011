@@ -1,5 +1,6 @@
 Zejtin x 1
 Brashno x 2
 Pechurki x 1
-Riba x 2
+Sok x 2
 Stek x 2
+Pivo x 10
